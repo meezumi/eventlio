@@ -1,0 +1,4 @@
+components library that we will be using is:
+shadcn/ui
+https://ui.shadcn.com/ (built on top of Radix Ui)
+{since we are using next.js -> https://ui.shadcn.com/docs/installation/next}

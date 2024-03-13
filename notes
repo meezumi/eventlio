@@ -57,7 +57,9 @@ and styling the active path of nav item, using the 'use client' -> pathname hook
 
 now we impliment the home page (i.e the page.tsx in (root) folder, under app folder)
 
+added the home (hero) section, hero text, p tag, button and hero image in a section and creating other section for adding the list of events 
 
+now we will connect the backend using MongoDB
 
 
 

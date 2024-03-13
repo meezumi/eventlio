@@ -3,6 +3,8 @@ import React from 'react'
 import Image from 'next/image'
 import { SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
 import { Button } from '../ui/button'
+import NavItems from './NavItems'
+import MobileNav from './MobileNav'
 
 const Header = () => {
   return (
@@ -16,9 +18,20 @@ const Header = () => {
           />
         </Link>
 
+        {/* for desktop devices */}
+        <SignedIn> 
+          <nav className='md:flex-between hidden w-full max-w-xs'>
+            {/* this is going to hide it in mobile devices and show in desktop */}
+            <NavItems />
+          </nav>
+        </SignedIn>
+
+
         <div className='flex w-32 justify-end gap-3'>
+          {/* for mobile devices */}
           <SignedIn>
             <UserButton afterSignOutUrl='/' />
+            <MobileNav />
           </SignedIn>
 
           {/* we will add clerk here, which is used for authentication */}

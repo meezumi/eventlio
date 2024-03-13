@@ -36,3 +36,23 @@ once login is done, we want to display the icon of the loggedin user in the Head
 <SignedIn/> 
 all from the clerk/nextjs 
 
+creating navitems menu for laptop devices: (NavItems, will go in shared folder)
+and (MobileNav, for mobile devices)
+for each we wrap them in the SignIn component of clerk, as code updated in Header.tsx
+
+for MobileNav: using shadcn component -> Sheet 
+  npx shadcn-ui@latest add sheet
+  doc to follow : https://ui.shadcn.com/docs/components/sheet 
+
+now we add the image for the MobileNav, replacing the text Open with Image component from nextjs
+
+fixing/styling the bg and color of the side menu in SheetContent, add Separator component from shadcn : npx shadcn-ui@latest add separator
+
+actually adding the navitems to be displayed in both device orientations:
+create a folder on root directory : constants (that always remain the same)
+fetching the code for index.ts from the repo and updating the NavItems.tsx
+
+
+
+
+

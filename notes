@@ -2,3 +2,8 @@ components library that we will be using is:
 shadcn/ui
 https://ui.shadcn.com/ (built on top of Radix Ui)
 {since we are using next.js -> https://ui.shadcn.com/docs/installation/next}
+
+we can create new layouts only for a specific route root:
+inside the (root) folder, we create layout.tsx, which would be similar to the last one (used for the app folder), so we export the same code. 
+
+shared folder is created, that stores the header and footer which would be used in various pages of the site, hence shared.

@@ -51,6 +51,8 @@ fixing/styling the bg and color of the side menu in SheetContent, add Separator 
 actually adding the navitems to be displayed in both device orientations:
 create a folder on root directory : constants (that always remain the same)
 fetching the code for index.ts from the repo and updating the NavItems.tsx
+and styling the active path of nav item, using the 'use client' -> pathname hook from nextjs/navigation 
+
 
 
 

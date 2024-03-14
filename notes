@@ -89,5 +89,35 @@ next we do the same thing to create a model for events
 // to know which properties does this model have: we will use Chat GPT to ask 
 // fill in the IEvent based of of the event schema
 
+webhook - (hooking up clerk, as soon as the clerk accoun is created with database user)
+webhook is an event trigger
+when something happens -> trigger something -> make a req -> process that event 
+
+https://clerk.com/docs/integrations/webhooks/sync-data#sync-clerk-data-to-your-backend-with-webhooks
+[STEP 1 IS SKIPPED HERE AND WILL BE DONE AFTER OU PAGE HAS BEEN DEPLOYED ]
+
+we will be adding npm install svix first, then creating App Router under 
+app/api/webhook/clerk/route.ts and copying the entire code from there.
+
+from the last section of the code  (line 50) we can pull all the information of a perticular event (here, that being creation of a user).
+
+once we have fetched the user, we can do something with them, maybe perform an action, so we create those actions in the: 
+lib folder -> actions -> user.actions.ts (it is a nextjs server action file so it will run on a server) ('use server' on top)
+
+we have to define the type of data wwe are passing, which is done by:
+new folder in root directory -> types -> index.ts (code from github)
+
+async ( user: CreateUserParams ) 
+
+for error handling in try catch block, we add the utils for it in the utils.ts file.
+
+with all the utils added, we add the query-string library in the dev env:
+npm install query-string
+
+then in the route.js we create what happens/how to work on actions such as 
+updateUser, deleteUser, updateUser
+
+for all the other user actions, we create new models for various user actions.
+such as category.model.ts and order.models.ts (code from github)
 
 

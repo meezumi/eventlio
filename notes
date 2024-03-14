@@ -60,7 +60,34 @@ now we impliment the home page (i.e the page.tsx in (root) folder, under app fol
 added the home (hero) section, hero text, p tag, button and hero image in a section and creating other section for adding the list of events 
 
 now we will connect the backend using MongoDB
+starting with creating database folder under lib folder and adding two more dependencies -> mongoose and mongodb 
+npm install mongoose mongodb
 
+let cached = mongoose || {conn: null, promise: null}
+// that is to check of there is any cached mongoose already, and if not we set the connection and promise to null and start anew
+
+(global as any). used to know that we are refering to the global time of mongoose.
+
+we will be using mongodb atlas as our database. 
+https://www.mongodb.com/atlas 
+create a new project there with a name then inside the database tab we 'Build a Database'
+
+create a user there providing username and password and remember them for later.
+-> your ip address will be added automatically under the network access tab but we have to had the entry of 'access from anywhere' (0000/0) too.
+
+next head to overview and select connect -> drivers and we will use the string to connect to the database we created. 
+
+-> mongodb+srv://aaryancodes:<password>@cluster0.ndzleox.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+
+more explanation is present in the respected code file.
+
+next we create a model in the database for users -> models (folder) -> user.model.ts
+
+next we do the same thing to create a model for events 
+-> models -> event.model.ts
+
+// to know which properties does this model have: we will use Chat GPT to ask 
+// fill in the IEvent based of of the event schema
 
 
 

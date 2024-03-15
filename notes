@@ -124,6 +124,13 @@ a good point to deploy the website in development, so next we can add the webhoo
 
 WE ALWAYS HAVE TO REDEPLOY TO PRODUCTION, IF WE ADD A NEW ENVIRONMENT VARIABLE.
 
+--------------------------------------------------------------
 
+AHHH TOOK HOURS TO FIX THIS TWT: 
 
+before this, in the Email, Phone, Username tab, need to enable 'always add first and last name from the user' then redeploy the application.
+
+THE USER LOGGIN IN THROUGH CLERK MUST HAVE BOTH THE FIRST AND LAST NAME IN THERE ACCOUNT (it may be gmail or github or any), only then the data will be stored in the backend mongoDB, because its mandatory for the db to recieve both of them, in order for it to consider it a valid user. 
+
+---------------------------------------------------------------
 

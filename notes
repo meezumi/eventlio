@@ -164,4 +164,8 @@ https://ui.shadcn.com/docs/components/form#installation
 while follwing the steps, we need to install: 
   npx shadcn-ui@latest add input
 
+since event form is gonna get bigger, we will move 
+zod verification to a seperate file in: 
+lib -> validator.ts 
 
+inside this file, we create our own form with various entries, like location, imageUrl, price, description and more.. which is then imported inside the eventForm

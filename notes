@@ -94,6 +94,9 @@ webhook is an event trigger
 when something happens -> trigger something -> make a req -> process that event 
 
 https://clerk.com/docs/integrations/webhooks/sync-data#sync-clerk-data-to-your-backend-with-webhooks
+
+https://clerk.com/docs/integrations/webhooks/sync-data
+
 [STEP 1 IS SKIPPED HERE AND WILL BE DONE AFTER OU PAGE HAS BEEN DEPLOYED ]
 
 we will be adding npm install svix first, then creating App Router under 
@@ -133,4 +136,32 @@ before this, in the Email, Phone, Username tab, need to enable 'always add first
 THE USER LOGGIN IN THROUGH CLERK MUST HAVE BOTH THE FIRST AND LAST NAME IN THERE ACCOUNT (it may be gmail or github or any), only then the data will be stored in the backend mongoDB, because its mandatory for the db to recieve both of them, in order for it to consider it a valid user. 
 
 ---------------------------------------------------------------
+
+Now we will work on the front end part of the application, focusing on events:
+
+(root) -> events -> create -> page.tsx
+
+note: if we have json elements inside return (), we have to wrap them in <></>
+
+now we will create EventForm which goes under:
+(since the form can be reused again)
+components -> shared -> EventForm.tsx 
+
+EventForm will be use client as it will handle the user clicks of mouse and keyboard, to enter the event form. vs. the create Event page will be rendered as server side.
+
+now we need to provide the user detail/id as in who is entering the details, which can be fetched from a hook auth() from clerk.
+
+for EventForm to recieve data, we need props which will be added to EventForm.tsx file.
+
+similarly, we create a page to update the event details of a user: 
+
+events -> create -> [id] -> update -> page.tsx
+
+we will use shadcn form component: 
+npx shadcn-ui@latest add form
+https://ui.shadcn.com/docs/components/form#installation
+
+while follwing the steps, we need to install: 
+  npx shadcn-ui@latest add input
+
 

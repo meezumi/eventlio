@@ -120,4 +120,10 @@ updateUser, deleteUser, updateUser
 for all the other user actions, we create new models for various user actions.
 such as category.model.ts and order.models.ts (code from github)
 
+a good point to deploy the website in development, so next we can add the webhooks from clerk.
+
+WE ALWAYS HAVE TO REDEPLOY TO PRODUCTION, IF WE ADD A NEW ENVIRONMENT VARIABLE.
+
+
+
 

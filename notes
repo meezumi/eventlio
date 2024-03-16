@@ -169,3 +169,32 @@ zod verification to a seperate file in:
 lib -> validator.ts 
 
 inside this file, we create our own form with various entries, like location, imageUrl, price, description and more.. which is then imported inside the eventForm
+
+now we will add the drop down functionality to the eventform: 
+for that we need a list of otions to select from in the dropdown, which can be added by:
+npx shadcn-ui@latest add select
+
+then follow the steps here: 
+https://ui.shadcn.com/docs/components/select
+
+we will be creating categories dynamically -> for that we need the useState hook from react.
+
+for users to be able to add there own category (dynamically) we will create a dialog box, which can be creaded by dialog from shadcn
+
+npx shadcn-ui@latest add dialog
+
+then follow along here: 
+https://ui.shadcn.com/docs/components/dialog
+
+then we add various styling to the divs and add functionalities of onClick() on the add button using the useState hooks as, updated in the code.
+
+(will work more later on the Dropdown menu)
+
+next in the EventForm, we will add a field for description.
+we will need a text area for description: can be added from shadcn
+https://ui.shadcn.com/docs/components/textarea using 
+
+npx shadcn-ui@latest add textarea
+
+
+

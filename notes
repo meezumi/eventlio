@@ -215,6 +215,12 @@ https://www.npmjs.com/package/react-datepicker
 
 npm install react-datepicker --save
 
+next we impliment price and isFree tag too, and for a checkerbox, we will use shadcn again: 
+https://ui.shadcn.com/docs/components/checkbox
+
+npx shadcn-ui@latest add checkbox
+
+
 
 
 

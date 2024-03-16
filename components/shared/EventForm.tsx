@@ -3,7 +3,7 @@
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { Textarea } from "@/components/ui/textarea"
-
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import {
   Form,
@@ -20,6 +20,8 @@ import { eventFormSchema } from "@/lib/validator"
 import * as z from "zod"
 import { eventDefaultValues } from "@/constants"
 import Dropdown from "./Dropdown"
+import { FileUploader } from "./FileUploader"
+import { useState } from "react"
 
 
 
@@ -31,6 +33,7 @@ type EventFormProps = {
 
 const EventForm = ({userId, type}: EventFormProps) => {
 
+  const [files, setFiles] = useState<File[]>([])
   const initialValues = eventDefaultValues;
 
   const form = useForm<z.infer<typeof eventFormSchema>>({
@@ -88,7 +91,7 @@ const EventForm = ({userId, type}: EventFormProps) => {
             name="description"
             render={({ field }) => (
               <FormItem className="w-full">
-                <FormControl className="h-72">
+                <FormControl className="h-52">
                   <Textarea placeholder="describe the event you wanna host here" {...field} className="textarea rounded-2xl" />
                 </FormControl>
                 <FormMessage />
@@ -103,8 +106,14 @@ const EventForm = ({userId, type}: EventFormProps) => {
             name="imageUrl"
             render={({ field }) => (
               <FormItem className="w-full">
-                <FormControl className="h-72">
-                  {/* here we will implement file uploader (next commit) */}
+                <FormControl className="h-52">
+
+                  <FileUploader 
+                    onFieldChange={field.onChange}
+                    imageUrl={field.value}
+                    setFiles={setFiles}
+                  />               
+
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -112,8 +121,61 @@ const EventForm = ({userId, type}: EventFormProps) => {
           />
 
         </div>
+              
+        {/* to insert icon for the form fields */}
 
-        
+        <div className="flex flex-col gap-5 md:flex-row">
+          <FormField
+            control={form.control}
+            name="location"
+            render={({ field }) => (
+              <FormItem className="w-full">
+                <FormControl>
+                  <div className="flex-center h-[54px] w-full overflow-hidden rounded-full bg-grey-50 px-4 py-2">
+                    <Image 
+                      src="/assets/icons/location-grey.svg"
+                      alt='calandar'
+                      width={24}
+                      height={24}
+                    />
+                    <Input placeholder="Event location or Online" {...field} className="input-field" />
+                  </div>
+
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </div>
+
+        {/* this one is for the start date  */}
+
+        <div className="flex flex-col gap-5 md:flex-row">
+          <FormField
+            control={form.control}
+            name="startDateTime"
+            render={({ field }) => (
+              <FormItem className="w-full">
+                <FormControl>
+                  <div className="flex-center h-[54px] w-full overflow-hidden rounded-full bg-grey-50 px-4 py-2">
+                    <Image 
+                      src="/assets/icons/calendar.svg"
+                      alt='calandar'
+                      width={24}
+                      height={24}
+                    />
+                    <p className="ml-3 whitespace-nowrap text-grey-600">Start Date:</p>
+                    
+                  </div>
+
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </div>
+
+
         <Button type="submit">Submit</Button>
       </form>
     </Form>

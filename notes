@@ -196,5 +196,26 @@ https://ui.shadcn.com/docs/components/textarea using
 
 npx shadcn-ui@latest add textarea
 
+next we will add a field to enter file uploads (for imageUrl) which can be implimented easily using uploadthing
+
+https://docs.uploadthing.com/getting-started/appdir
+
+get the api keys from here: https://uploadthing.com/dashboard/5i56l76eev/api-keys
+and add them to the env.local file
+
+after that we create files and follow the documentations, creating 
+uploadthing in lib folder, and 
+FileUploader in shared folder (cold of FileUploader from github), 
+accordingly, updating EventForm.tsx
+
+now we want to add icons for the entry fields, for that we create a new div in the eventform file:
+
+for date entriees : we will need a date picker 
+https://www.npmjs.com/package/react-datepicker
+
+npm install react-datepicker --save
+
+
+
 
 

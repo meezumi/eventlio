@@ -248,3 +248,18 @@ on clicking the submit button -> the form will initiate onSubmit -> onSubmit wil
 might encounter a userId error, 
 https://clerk.com/docs/backend-requests/making/custom-session-token
 
+
+next we will crete the events page, to display all the events on the website
+
+app -> (root) -> events -> [id] 
+
+this is where the event we just created, having a unique ._id, we will be redirected to after submitting is finished and form resets. 
+
+to access the params, we just have to enter props as 
+({ params: { id }}) 
+[its going to have the same name as how we created the folder i.e [id] folder ]
+
+
+we have to add uploadthing server in the next.config.js and add it as a trusted source of image provider.
+
+ADDING all the styling and form details one by one in the page.tsx of the events -> [id] -> page.tsx to get the information displayed on the front end.

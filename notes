@@ -263,3 +263,11 @@ to access the params, we just have to enter props as
 we have to add uploadthing server in the next.config.js and add it as a trusted source of image provider.
 
 ADDING all the styling and form details one by one in the page.tsx of the events -> [id] -> page.tsx to get the information displayed on the front end.
+
+next we want to showcase the events on the home page as a collection se we create a new component for it in 
+
+shared -> Collection.tsx
+
+for fetching all the events we have to create a getallEvents function under the event.action.ts
+
+which will later be used to fetch all the events to be displayed on the home page.tsx

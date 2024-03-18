@@ -1,4 +1,4 @@
-import React, { startTransition, useState } from 'react'
+import React, { startTransition, useEffect, useState } from 'react'
 import {
   Select,
   SelectContent,
@@ -6,7 +6,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
-import { ICategory } from '@/lib/database/models/category.model'
+import Category, { ICategory } from '@/lib/database/models/category.model'
 import {
   Dialog,
   DialogContent,
@@ -18,6 +18,7 @@ import {
 } from "@/components/ui/dialog"
 import { Button } from '../ui/button'
 import { Input } from '../ui/input'
+import { createCategory, getAllCategories } from '@/lib/actions/category.actions'
 
 
 type DropdownProps = {
@@ -32,9 +33,28 @@ const Dropdown = ({ value, onChangeHandler }:DropdownProps) => {
   ])
   const [newCategory, setNewCategory] = useState('')
 
+  //  THIS IS TO HANDLE THE CREATION OF THE CATEGORIES
+
   const handleAddCategory = () => {
-    
+    createCategory({ 
+      categoryName: newCategory.trim()
+    })
+      .then((category) => {
+        setCategories((prevState) => [...prevState, category])
+      })
   }
+
+  // THIS IS TO FETCH ALL THE USER CREATED CATEGORIES 
+
+  useEffect(() => {
+    const getCategories = async () => {
+      const categoryList = await getAllCategories();
+
+      categoryList && setCategories(categoryList as ICategory[])
+    }
+
+    getCategories();
+  })
 
 
   return (
@@ -51,7 +71,7 @@ const Dropdown = ({ value, onChangeHandler }:DropdownProps) => {
         ))}
 
         <Dialog>
-          <DialogTrigger className='p-medium-14 flex w-full rounded-sm py-3 pl-8 text-primary-500 hover:bg-primary-50 focus:text-primary-500'>Open</DialogTrigger>
+          <DialogTrigger className='p-medium-14 flex w-full rounded-sm py-3 pl-8 text-primary-500 hover:bg-primary-50 focus:text-primary-500'>Add New Category</DialogTrigger>
           <DialogContent className='bg-white'>
             <DialogHeader>
               <DialogTitle>New Category</DialogTitle>

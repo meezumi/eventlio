@@ -221,7 +221,30 @@ https://ui.shadcn.com/docs/components/checkbox
 npx shadcn-ui@latest add checkbox
 
 
+now we test the submit form function onSubmit, if it actually works and sends back the user entered data from the front end.
+
+inspect the local run dev website after clicking create event and check if an Object containing all the information from the fieds of the form is collected. 
 
 
+now we will work on the event category to set it dynamically: 
 
+to create the ability to add categories, we can create a new actions file in:
+lib -> actions -> category.actions.ts 
+
+the following actions: creating new category and getting/fetching all the categories from the database are the two export functions created here.
+
+these will later be used in Dropdown.tsx under handleAddCategory function
+
+now when user creates a new category, it will be stored in the Category database model and will be saved
+
+this will be linked to onSubmit later.
+
+similarly we create event.actions.ts in lib -> actions -> event.actions.ts
+
+after all the setup of linking user side with server side(database) :
+
+on clicking the submit button -> the form will initiate onSubmit -> onSubmit will call the server action of createEvent -> which will connectToDatabase, figure out if we have an organiser -> finally create an event through the database
+
+might encounter a userId error, 
+https://clerk.com/docs/backend-requests/making/custom-session-token
 

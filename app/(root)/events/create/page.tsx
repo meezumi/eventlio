@@ -6,6 +6,7 @@ const CreateEvent = () => {
   const { sessionClaims } = auth();
   const userId = sessionClaims?.userId as string; 
   // ? is added if the sessionClaim doesnt exist
+  // console.log(userId)
 
 
   return (

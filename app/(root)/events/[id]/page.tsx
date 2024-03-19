@@ -1,16 +1,26 @@
-import { getEventById } from '@/lib/actions/event.actions'
+import { getEventById, getRelatedEventsByCategory } from '@/lib/actions/event.actions'
 import { SearchParamProps } from '@/types'
 import React from 'react'
 import Image from 'next/image';
 import { format } from 'path';
 import { formatDateTime } from '@/lib/utils';
+import Collection from '@/components/shared/Collection';
 
-const EventDetails = async ({ params: { id }}: SearchParamProps ) => {
+const EventDetails = async ({ params: { id }, searchParams }: 
+  SearchParamProps ) => {
+
   const event = await getEventById(id);
+
+  const relatedEvents = await getRelatedEventsByCategory({
+    categoryId: event.category._id,
+    eventId: event._id,
+    page: searchParams.page as string,
+  })
 
   console.log(event);
 
   return (
+    <>
     <section className='flex justify-center bg-primary-50 bg-dotted-pattern bg-contain'>
       <div className='grid grid-cols-1 md:grid-cols-2 2xl:max-w-7xl'>
         <Image 
@@ -73,6 +83,24 @@ const EventDetails = async ({ params: { id }}: SearchParamProps ) => {
         </div>
       </div>
     </section>
+    
+    {/* evetns from the same organiser */}
+    <section className='wrapper my-8 flex flex-col gap-8 md:gap-12'>
+      <h2 className='h2-bold'>Related Events</h2>
+
+      <Collection 
+          data={relatedEvents?.data}
+          emptyTitle="No events found"
+          emptyStateSubtext="Come back later"
+          collectionType="All_Events"
+          limit={6}
+          page={1}
+          totalPages={2} 
+          urlParamName={""}        
+        />
+        
+    </section>
+    </>
   )
 }
 

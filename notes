@@ -287,4 +287,8 @@ npx shadcn-ui@latest add alert-dialog
 
 will now add deleteEvent action in the event.action.tsx 
 
-adding some more events from the github
+adding some more event actions from the github
+
+updated the updateEvent page for users to update their existing event 
+
+next will work on related events sections

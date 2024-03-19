@@ -275,3 +275,16 @@ which will later be used to fetch all the events to be displayed on the home pag
 and we begin to add components to our home page, we start with Card component:
 
 components -> shared -> Card.tsx
+
+after the Card component is finished in the making, we will add a Delete Comformation Button for the events and add it inside Card component as a component.
+
+components -> shared -> DeleteConfirmation.tsx
+
+for this we will again use shadcn (used before here)
+https://ui.shadcn.com/docs/components/alert-dialog
+
+npx shadcn-ui@latest add alert-dialog
+
+will now add deleteEvent action in the event.action.tsx 
+
+adding some more events from the github

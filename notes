@@ -292,3 +292,7 @@ adding some more event actions from the github
 updated the updateEvent page for users to update their existing event 
 
 next will work on related events sections
+
+next we will be working on profile, creating:
+
+app -> (root) -> profile -> page.tsx

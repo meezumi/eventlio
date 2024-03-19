@@ -271,3 +271,7 @@ shared -> Collection.tsx
 for fetching all the events we have to create a getallEvents function under the event.action.ts
 
 which will later be used to fetch all the events to be displayed on the home page.tsx
+
+and we begin to add components to our home page, we start with Card component:
+
+components -> shared -> Card.tsx

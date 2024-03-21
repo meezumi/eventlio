@@ -12,10 +12,11 @@ const Header = () => {
       <div className="wrapper flex items-center justify-between">
         {/* wrapper class is added in the global class css. */}
         <Link href='/' className='w-36'>
-          <Image 
-            src='/assets/images/logo.svg' width={128} height={38}
+          {/* <Image 
+            src='/assets/images/' width={128} height={38}
             alt = 'Eventlio logo'
-          />
+          /> */}
+          <h1 className='text-[25px] font-extrabold grad'>Eventlio </h1>
         </Link>
 
         {/* for desktop devices */}

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   title: "Eventlio",
   description: "Host your events and manage them anywhere with eaze",
   icons: {
-    icon: '/assets/images/logo.svg' // adding icons
+    icon: '/assets/images/Eventlio.png' // adding icons
   }
 };
 

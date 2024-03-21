@@ -33,12 +33,13 @@ const MobileNav = () => {
               This action cannot be undone. This will permanently delete your account and remove your data from our servers.
               </SheetDescription>
             </SheetHeader> */}
-            <Image 
+            {/* <Image 
               src={"/assets/images/logo.svg"} 
               alt={"logo"} 
               width={128}
               height={38}
-              />
+              /> */}
+              <h1 className='text-[25px] font-extrabold grad'>Eventlio </h1>
               <Separator className="border border-gray-50"/>
               <NavItems />
 

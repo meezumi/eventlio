@@ -333,9 +333,19 @@ then we modify the route,ts from nodejs to nextjs route
 
 next we create a new action createOrder in order.actions.ts (linking over order details to be updated on the backend database as well )
 
+the india location problem persists: 
+https://support.stripe.com/questions/failed-international-payments-from-stripe-accounts-in-india
 
+[WILL FIND SOLUTION FOR THIS LATER]
 
+adding two more exports to the order.actions.ts to access the database for user orders.
 
+uncommenting the section of code left in the profile page.tsx to show the bought events of the users 
+
+in order to search different pages:
+we add searchparams in props and update the total pages
+
+next we will be implimenting order details page, which the user can access from the myProfile -> hostedEvents section
 
 
 

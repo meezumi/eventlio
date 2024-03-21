@@ -1,16 +1,28 @@
 import Collection from '@/components/shared/Collection'
 import { Button } from '@/components/ui/button'
 import { getEventsByUser } from '@/lib/actions/event.actions'
+import { getOrdersByUser } from '@/lib/actions/order.actions'
+import { IOrder } from '@/lib/database/models/order.model'
+import { SearchParamProps } from '@/types'
 import { auth } from '@clerk/nextjs'
 import { Link } from 'lucide-react'
 import React from 'react'
 
-const ProfilePage = async () => {
+const ProfilePage = async ({ searchParams }: SearchParamProps) => {
 
   const { sessionClaims } = auth();
   const userId = sessionClaims?.userId as string;
 
-  const organizedEvents = await getEventsByUser({ userId, page: 1 })
+  const ordersPage = Number(searchParams?.ordersPage) || 1;
+  const eventsPage = Number(searchParams?.eventsPage) || 1;
+
+
+  const orders = await getOrdersByUser({ userId, page: ordersPage})
+
+  const orderedEvents = orders?.data.map((order: IOrder) => order.event) || [];
+  const organizedEvents = await getEventsByUser({ userId, page: eventsPage })
+
+  console.log({orderedEvents})
 
   return (
     <>
@@ -26,18 +38,18 @@ const ProfilePage = async () => {
         </div>
       </section>
 
-      {/* <section>
+      <section>
         <Collection 
-          data={events?.data}
+          data={orderedEvents}
           emptyTitle="No event tickets purchased yet"
           emptyStateSubtext="No worries - plenty of other stuff to wander around here, have a look around :)"
           collectionType="My_Tickets"
           limit={3}
-          page={1}
+          page={ordersPage}
           urlParamName="ordersPage"
-          totalPages={2}     
+          totalPages={orders?.totalPages}     
         />
-      </section> */}
+      </section>
 
     
       {/* Events We Organized */}
@@ -59,9 +71,9 @@ const ProfilePage = async () => {
           emptyStateSubtext="you can go create now, just few steps and deets!"
           collectionType="Events_Organized"
           limit={6}
-          page={1}
+          page={eventsPage}
           urlParamName="ordersPage"
-          totalPages={2}     
+          totalPages={organizedEvents?.totalPages}     
         />
       </section>
 

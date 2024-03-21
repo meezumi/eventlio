@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { format } from 'path';
 import { formatDateTime } from '@/lib/utils';
 import Collection from '@/components/shared/Collection';
+import CheckoutButton from '@/components/shared/CheckoutButton';
 
 const EventDetails = async ({ params: { id }, searchParams }: 
   SearchParamProps ) => {
@@ -54,16 +55,19 @@ const EventDetails = async ({ params: { id }, searchParams }:
 
           {/* checkout button  */}
 
+          {/* will add a new component CheckotButton here */}
+          <CheckoutButton event={event}/> 
+
           <div className='flex flex-col gap-5'>
             <div className='flex gap-2 md:gap-3'>
               <Image src="/assets/icons/calendar.svg" alt="calendar" width={32} height={32} />
               <div className='p-medium-16 lg:p-regular-20 flex flex-wrap items-center'>
                 <p>
                   {formatDateTime(event.startDateTime).dateOnly} - {' '}
-                  {formatDateTime(event.startDateTime).timeOnly}
+                  {formatDateTime(event.startDateTime).timeOnly }
                 </p>
                 <p>
-                  {formatDateTime(event.endDateTime).dateOnly} -  {' '}
+                   { formatDateTime(event.endDateTime).dateOnly} -  {' '}
                   {formatDateTime(event.endDateTime).timeOnly}
                 </p>
               </div>

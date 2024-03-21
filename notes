@@ -296,3 +296,46 @@ next will work on related events sections
 next we will be working on profile, creating:
 
 app -> (root) -> profile -> page.tsx
+
+now we will be implimenting the ability of the users to by the event tickets and we start by having to display a buy now button by editing in: 
+
+app -> (root) -> events -> [id] -> page.tsx
+
+creating a new component CheckoutButton.rsx in shared -> components folder
+
+IN ORDER TO PURCHASE, we need to be signed in which can be checked by the SignedOut component of clerk
+
+now after setting up the checkout button, we need to impliment payment infrastructure into the app, which can be done by the help of stripe
+https://stripe.com/
+
+then after creating account we head to the docs: 
+https://docs.stripe.com/checkout/quickstart
+
+npm install @stripe/stripe-js 
+
+checkoutOrder is an action related to the order, so we will add this action/function in the lib -> actions -> order.actions.ts file 
+
+have to change the currency to inr, since according to the indian regulations, you need to be a partnershiped comany or enthusiast, in order to accept usd payments (this edit was done in order.actions.ts)
+
+now we want the user perchased events to be displayed on their profile page 
+and want to store the order details in the database, so we can retrieve it later as per requirement. For this we will be using strive webhooks (once the checkout is exceeded or failed)
+
+https://dashboard.stripe.com/test/webhooks
+
+-> add an endpoint 
+endpoint url -> https://eventlio.vercel.app/api/webhook/stripe
+
+get the Signing secret and copy it and add to env.local
+
+next we go to app -> api -> webhook -> stripe -> route.ts 
+then we modify the route,ts from nodejs to nextjs route
+(get the code from github)
+
+next we create a new action createOrder in order.actions.ts (linking over order details to be updated on the backend database as well )
+
+
+
+
+
+
+

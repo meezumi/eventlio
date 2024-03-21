@@ -205,7 +205,7 @@ body {
   }
 
   .grad {
-  background: -webkit-linear-gradient(#30ffd9, #004f46);
+  background: -webkit-linear-gradient(#4530ff, #04d3bb);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

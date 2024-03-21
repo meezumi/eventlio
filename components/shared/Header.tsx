@@ -16,7 +16,7 @@ const Header = () => {
             src='/assets/images/' width={128} height={38}
             alt = 'Eventlio logo'
           /> */}
-          <h1 className='text-[25px] font-extrabold grad'>Eventlio </h1>
+          <h1 className='text-[25px] font-extrabold grad'>Eventlio</h1>
         </Link>
 
         {/* for desktop devices */}

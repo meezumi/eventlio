@@ -8,16 +8,16 @@ const Footer = () => {
       <div className='flex-center wrapper flex-between flex flex-col gap-4 p-5 text-center sm:flex-row'>
         <Link href='/'>
           {/* <Image 
-            src="/assets/images/logo.svg"
+            src="/assets/images/Eventlio.png"
             alt="logo"
-            width={128}
+            width={28}
             height={38}
           /> */}
           <h1 className='text-[25px] font-extrabold grad'>Eventlio </h1>
         </Link>
 
 
-        <p> Created by meezumi. All Rights Reserved.</p>
+        <p className='grad'> Created by meezumi. All Rights Reserved.</p>
       </div>
     </footer>
   )

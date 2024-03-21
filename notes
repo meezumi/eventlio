@@ -347,5 +347,9 @@ we add searchparams in props and update the total pages
 
 next we will be implimenting order details page, which the user can access from the myProfile -> hostedEvents section
 
+TO ADD THE ORDERS PAGE -> we add: 
+app -> (root) -> orders -> page.tsx
 
+next we will impliment search functionality
 
+shared -> Search.tsx 

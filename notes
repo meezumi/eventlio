@@ -353,3 +353,11 @@ app -> (root) -> orders -> page.tsx
 next we will impliment search functionality
 
 shared -> Search.tsx 
+
+next we will be implimenting the category tab too:
+shared -> categoryFilter.tsx
+
+now we will add shadcn element from: 
+https://ui.shadcn.com/docs/components/select
+
+inorder to get all the categories, we can simply reuse the function we created while we used it in the Create Event page for Category

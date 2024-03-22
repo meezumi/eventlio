@@ -54,7 +54,7 @@ const Dropdown = ({ value, onChangeHandler }:DropdownProps) => {
     }
 
     getCategories();
-  })
+  }, [])
 
 
   return (

@@ -361,3 +361,11 @@ now we will add shadcn element from:
 https://ui.shadcn.com/docs/components/select
 
 inorder to get all the categories, we can simply reuse the function we created while we used it in the Create Event page for Category
+
+
+next we will be adding pagination, i.e moving to next or prev page after hitting a limt of 6 events shown in 1 page that too as a component in:
+shared -> Pagination.tsx
+
+whenever we have hooks, it has to be user client side, as we type on the top of the code page.
+
+next on all the places we hard coded the pages, limit and totalPages, in the collection component used on various parts, we will now remove it and update it for it to be dynamic

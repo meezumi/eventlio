@@ -31,8 +31,8 @@ export default async function Home({ searchParams }: SearchParamProps) {
       <section className="bg-primary-50 bg-dotted-pattern bg-contain py-5 md:py-10">
         <div className="wrapper grid grid-cols-1 gap-5 md:grid-cols-2 2xl:gap-0">
           <div className="flex flex-col justify-center gap-8">
-            <h1 className="h1-bold">Host your events free, connect and explore with eaze, all on <span className="grad">Eventlio </span></h1>
-            <p className="p-regular-20 md:p-regular-24">Book and learn helpful tips from a variety of mentors in world-class companies with our global community. Have a look around :) </p>
+            <h1 className="h1-bold">Host your events, connect and learn something new, on <span className="grad">Eventlio</span></h1>
+            <p className="p-regular-20 md:p-regular-24">Get tickets to learn helpful tips from a variety of instructors in world-class companies with our global community or be the host yourself :) </p>
             <Button size="lg" asChild className="button w-full sm:w-fit">
               <Link href='#events'>
                 Explore Now
@@ -65,8 +65,8 @@ export default async function Home({ searchParams }: SearchParamProps) {
           emptyStateSubtext="Come back later"
           collectionType="All_Events"
           limit={6}
-          page={1}
-          totalPages={2} 
+          page={page}
+          totalPages={events?.totalPages} 
           urlParamName={""}        
         />
       </section>

@@ -369,3 +369,27 @@ shared -> Pagination.tsx
 whenever we have hooks, it has to be user client side, as we type on the top of the code page.
 
 next on all the places we hard coded the pages, limit and totalPages, in the collection component used on various parts, we will now remove it and update it for it to be dynamic
+
+adding finishing touches to the website 
+
+--- END OF THE PROJECT ---
+
+useful websitesa and resources used and to review to pick up where I left of - 
+
+shadcn nextjs installation (for its components)
+https://ui.shadcn.com/docs/installation/next
+
+stripe and its webhooks (for payment infrastructure)
+https://dashboard.stripe.com/test/developers
+
+clerk (for user authentication implimentation) 
+https://dashboard.clerk.com/apps/app_2dcll4ZIoagSweIJcuF0DVZHqL9/instances/ins_2dclkyjLN2toWxEcoIZxUUo3CpJ
+
+mongodb (backend database used for user data)
+https://cloud.mongodb.com/v2/65f2b56cc5d19963ed13c77b#/overview
+
+nextjs (the base js framework with react used for developing the website)
+https://nextjs.org/docs/getting-started/installation
+
+vercel (to deploy the application globally)
+https://vercel.com/meezumis-projects

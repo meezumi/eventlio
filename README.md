@@ -1,3 +1,36 @@
+# Eventlio
+
+**Eventlio** is a modern event management web application built with **Next.js**, **TypeScript**, and **Tailwind CSS**.  
+It helps users **create, browse, and manage events** effortlessly — from small meetups to large conferences — all in one sleek interface.
+
+---
+
+## 🚀 Features
+
+- 🗓️ Create and manage events (title, description, date, location)
+- 🔍 Browse and search upcoming events
+- 🎨 Responsive UI built with Tailwind CSS
+- ⚡ Blazing fast SSR/SSG with Next.js
+- 🌐 Deploy-ready for Vercel
+- 🧱 Scalable TypeScript architecture
+- 🔐 (Planned) Authentication and role-based access
+- 🎟️ (Planned) RSVP / Ticket booking system
+- 📊 (Planned) Event analytics dashboard
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer | Technology |
+|-------|-------------|
+| Framework | [Next.js](https://nextjs.org/) |
+| Language | [TypeScript](https://www.typescriptlang.org/) |
+| Styling | [Tailwind CSS](https://tailwindcss.com/) |
+| Deployment | [Vercel](https://vercel.com/) |
+| Package Manager | npm / yarn |
+
+---
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started

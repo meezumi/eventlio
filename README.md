@@ -62,8 +62,32 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## 📋 Prerequisites
+
+- Node.js 22.x or higher
+- npm / yarn / pnpm
+- MongoDB database
+- Clerk account (for authentication)
+- UploadThing account (for file uploads)
+- Stripe account (for payments)
+
+## 🔧 Environment Setup
+
+1. Copy `.env.example` to `.env.local`:
+```bash
+cp .env.example .env.local
+```
+
+2. Fill in all required environment variables (Clerk, MongoDB, UploadThing, Stripe)
+
+See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed setup instructions.
+
+## 🚀 Deploy on Vercel
+
+This project is configured to use **Node.js 22.x**.
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+**Important:** Make sure Node.js version is set to **22.x** in your Vercel Project Settings.
+
+For detailed deployment instructions, webhook configuration, and troubleshooting, see [DEPLOYMENT.md](./DEPLOYMENT.md).

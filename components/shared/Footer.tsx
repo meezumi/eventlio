@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className='border-t'>
       <div className='flex-center wrapper flex-between flex flex-col gap-4 p-5 text-center sm:flex-row'>
-        <Link href='/'>
+        <Link href='/' className='hover:scale-105 transition-transform duration-300'>
           {/* <Image 
             src="/assets/images/Eventlio.png"
             alt="logo"
